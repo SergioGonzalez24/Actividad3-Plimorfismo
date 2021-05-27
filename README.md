@@ -3,6 +3,8 @@ Tomando como contexto la situación que se planteó en la Actividad 1y seguiste 
 
 
 1.Enviar paquete
+
 2.Calcular costo del paquete
+
 3.Recibir paquete
 
