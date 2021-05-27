@@ -8,23 +8,10 @@ CXXFLAGS = -std=c++11 -Wall
 LDFLAGS = 
 
 # Makefile settings - Can be customized.
-<<<<<<< HEAD
-<<<<<<< HEAD
 APPNAME = ../app/Actividad3
 EXT = .cpp
 SRCDIR = ../src
 OBJDIR = ../build/obj
-=======
-=======
->>>>>>> 6f3cf27de17ed2e9e266b805181d9182d09e294a
-APPNAME = ../app/Actividad2
-EXT = .cpp
-SRCDIR = ../src
-OBJDIR = .
-<<<<<<< HEAD
->>>>>>> 6f3cf27de17ed2e9e266b805181d9182d09e294a
-=======
->>>>>>> 6f3cf27de17ed2e9e266b805181d9182d09e294a
 
 ############## Do not change anything from here downwards! #############
 SRC = $(wildcard $(SRCDIR)/*$(EXT))
