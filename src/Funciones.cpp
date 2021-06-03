@@ -6,7 +6,39 @@
 #include <chrono>
 #include <cmath>
 
+using std::cout;
+using std::cin;
+using std::endl;
 using namespace std;
+
+void efecto_carga(int time, const string message, char symbol, int seleccion) {
+
+    string progress_bar;
+    const double progress_level = 1.42;
+
+    cout << message << "\n\n";
+
+    for (double percentage = 0; percentage <= 100; percentage += progress_level) {
+        progress_bar.insert(0, 1, symbol);
+        cout << "\r [" << ceil(percentage) << '%' << "] " << progress_bar;
+        this_thread::sleep_for(chrono::milliseconds(time));       
+    }
+
+    
+    cout << "\n\n";
+    cout << "¡Envio Procesado!";
+    cout << "\n\n";
+}
+
+
+void aEtiquetar(Paquete &paquete) {
+    paquete.etiqueta();
+}
+
+
+void calc_Precio(Paquete &paquete) {
+    paquete.calcular_Precio();
+}
 
 void enviarPaquete() {
 
@@ -36,6 +68,7 @@ void enviarPaquete() {
 
     double x,y,z,radio;
     int estampas;
+    int paraEnviar = 0;
 
 
     do {
@@ -93,55 +126,70 @@ void enviarPaquete() {
 
         cout << "Que desea Enviar? " << endl;
         cout << "1-.Caja \n 2-.Sobre \n 3-.Cilindro" << endl;
+
         int sleccion;
         cin >> sleccion;
 
         if (sleccion == 1) {
-            cout << "Caja: \n Coloque las dimensiones de su caja en x,y,z " << endl;
+            cout << "Caja: \n Coloque las dimensiones de su caja en largo, ancho, alto " << endl;
+            cout << "Largo :";
             cin >> x;
+            cout << endl;
+            cout << "ancho :";
             cin >> y;
+            cout << endl;
+            cout << "alto :";
             cin >> z;
+            cout << endl;
+
 
             Caja caja1(nombrePaqueteria,direccionPaqueteria,color,nombreEnviador, nombreDestinatario, direccion, id, peso, fecha, notas,x,y,z);
 
             cout << endl;
-            paq1.print();
+            aEtiquetar(caja1);
             cout << endl;
-            caja1.pedido_final();
-            cout << endl;
+           paraEnviar = caja1.enviar_Paquete();
 
         }
 
         else if (sleccion == 2) {
 
-            cout << "Sobre: \n Coloque las dimensiones en x,y y la cantidad de estampas: " << endl;
+            cout << "Sobre: \n Coloque las dimensionesde su sobre en largo, alto y la cantidad de estampas: " << endl;
+            cout << "largo :";
             cin >> x;
+            cout << endl;
+            cout << "alto: ";
             cin >> y;
+            cout << endl;
+            cout << "Estampas: ";
             cin >> estampas;
+            cout << endl;
 
             Sobre sobre1(nombrePaqueteria,direccionPaqueteria,color,nombreEnviador, nombreDestinatario, direccion, id, peso, fecha, notas,x,y,estampas);
 
             cout << endl;
-            paq1.print();
+            aEtiquetar(sobre1);
             cout << endl;
-            sobre1.pedido_final();
-            cout << endl;
+            paraEnviar = sobre1.enviar_Paquete();
 
         }
 
         else if (sleccion == 3) {
-            cout << "Cilindro: \n Coloque las dimensiones de radio y altura" << endl;
+            cout << "Cilindro: \n Coloque las dimensiones del cilindor en radio y altura" << endl;
+            cout << "Radio: ";
             cin >> radio;
+            cout << endl;
+            cout << "Altura: ",
             cin >> y;
+            cout << endl;
             
 
             Cilindro cilindro1(nombrePaqueteria,direccionPaqueteria,color,nombreEnviador, nombreDestinatario, direccion, id, peso, fecha, notas,radio,y);
 
             cout << endl;
-            paq1.print();
-            cout << endl;
-            cilindro1.pedido_final();
-            cout << endl;       
+            aEtiquetar(cilindro1);
+            cout << endl;    
+            int paraEnviar = cilindro1.enviar_Paquete();   
         }
 
 
@@ -151,29 +199,21 @@ void enviarPaquete() {
         cin >> valor_correcto;
         cout << endl;
 
+        
+
+
+
+
     }
 
     while (valor_correcto == 'n');
 
+    //Efectos de Cargando
 
+    efecto_carga(20, "Procesando", '*',paraEnviar); //Proceso
+    efecto_carga(10, "Enviando", '#',paraEnviar); //Enviando Paquete
 }
 
-void efecto_carga(int time, const string message, char symbol) {
 
-    string progress_bar;
-    const double progress_level = 1.42;
-
-    cout << message << "\n\n";
-
-    for (double percentage = 0; percentage <= 100; percentage += progress_level) {
-        progress_bar.insert(0, 1, symbol);
-        cout << "\r [" << ceil(percentage) << '%' << "] " << progress_bar;
-        this_thread::sleep_for(chrono::milliseconds(time));       
-    }
-
-    cout << "\n\n";
-    cout << "¡Envio Procesado!";
-    cout << "\n\n";
-}
 
 
