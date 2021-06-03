@@ -28,15 +28,28 @@ void Caja::set_alto(double altura) {
     this-> altura = altura;
 }
 
-void Caja::pedido_final() {
+void Caja::etiqueta() {
+    Paquete::etiqueta();
     cout << "Informacion de Pedido: " << endl;
     cout << "largo" << get_largo() << endl;
     cout << "ancho" << get_ancho() << endl;
     cout << "altura" << get_alto() << endl;
 
+}
 
+int Caja::calcular_Precio() {
+    int Precio_Caja = 100;
     
+    if (get_peso() <= 50 && get_peso() > 20) {
+        return 100 + Precio_Caja;
+    }
 
-    
+    else if (get_peso() <= 20 && get_peso() > 10){
+        return 50 + Precio_Caja;
+    }
 
+    else if (get_peso() <= 10 && get_peso() > 0){
+        return 25 + Precio_Caja;
+    }
+    return 0;
 }

@@ -43,8 +43,10 @@ class Caja : public Paquete  {
 		void set_alto(double altura);
 
 		//otros
+		virtual void etiqueta();
+		virtual int enviar_Paquete() { return 1;}
+		virtual int calcular_Precio();
 
-		void pedido_final();
 
 
 

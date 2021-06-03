@@ -17,6 +17,8 @@ Definicion de funciones utilizadas en main
 
 
 void enviarPaquete();
-void efecto_carga(int time, const string message, char symbol);
+void efecto_carga(int time, const string message, char symbol,int seleccion);
+void aEtiquetar(Paquete &paquete);
+void calc_Precio(Paquete &paquete);
 
 

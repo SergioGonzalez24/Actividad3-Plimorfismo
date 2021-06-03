@@ -73,7 +73,10 @@ class Paquete  {
 		
 
 		//Otros
-		void print();
+		virtual void etiqueta();
+		virtual int enviar_Paquete();
+		virtual int calcular_Precio();
+		
 
 };
 #endif

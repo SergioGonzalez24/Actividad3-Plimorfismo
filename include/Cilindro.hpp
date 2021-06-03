@@ -40,7 +40,9 @@ class Cilindro : public Paquete  {
 
 		//otros
 
-		void pedido_final();
+		virtual void etiqueta();
+		virtual int enviar_Paquete() { return 2;}
+		virtual int calcular_Precio();
 
 };
 #endif

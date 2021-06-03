@@ -34,7 +34,7 @@ int main() {
 
             for (int i = 0; i <totPaq; i++) {
                 enviarPaquete();
-                efecto_carga(20, "Procesando", '*'); 
+                 
             }
 
         }

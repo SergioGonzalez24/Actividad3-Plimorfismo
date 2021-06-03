@@ -60,7 +60,7 @@ void Paquete::set_notas(string notas) {
     this-> notas = notas;
 }
 
-void Paquete::print() {
+void Paquete::etiqueta() {
 
         cout << "Paqueteria: " << datos_paqueteria.get_nombreP() << endl;
         cout << "Direccion de Envio: " << datos_paqueteria.get_direccionP() << endl;
@@ -73,6 +73,16 @@ void Paquete::print() {
         cout<< "Fecha de envio: " << get_fecha_envio()<< endl; 
         cout << "Notas: " << get_notas() << endl;
 
+}
+
+int Paquete::enviar_Paquete() {
+    cout << "Enviadno Paquete: " << endl;
+    return 0;
+}
+
+int Paquete::calcular_Precio() {
+    cout << "Calcular Precio: " << endl;
+    return 0;
 }
 
 

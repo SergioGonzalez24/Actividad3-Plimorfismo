@@ -44,6 +44,8 @@ class Sobre : public Paquete {
 
 		//otros
 
-		void pedido_final();
+		virtual void etiqueta();
+		virtual int enviar_Paquete() { return 3;}
+		virtual int calcular_Precio();
 };
 #endif
