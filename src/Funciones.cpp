@@ -56,8 +56,8 @@ void aEtiquetar(Paquete &paquete) {
 }
 
 
-void calc_Precio(Paquete &paquete) {
-    paquete.calcular_Precio();
+int calc_Precio(Paquete &paquete) {
+    return paquete.calcular_Precio();
 }
 
 void enviarPaquete() {
@@ -89,6 +89,7 @@ void enviarPaquete() {
     double x,y,z,radio;
     int estampas;
     int paraEnviar = 0;
+    int precio = 0;
 
 
     do {
@@ -168,6 +169,7 @@ void enviarPaquete() {
             cout << endl;
             aEtiquetar(caja1);
             cout << endl;
+            precio = calc_Precio(caja1);
            paraEnviar = caja1.enviar_Paquete();
 
         }
@@ -190,6 +192,7 @@ void enviarPaquete() {
             cout << endl;
             aEtiquetar(sobre1);
             cout << endl;
+            precio = calc_Precio(sobre1);
             paraEnviar = sobre1.enviar_Paquete();
 
         }
@@ -208,21 +211,17 @@ void enviarPaquete() {
 
             cout << endl;
             aEtiquetar(cilindro1);
-            cout << endl;    
+            cout << endl; 
+            precio = calc_Precio(cilindro1);   
             paraEnviar = cilindro1.enviar_Paquete();   
         }
 
-
+        cout << "El precio de su envio es: " << precio << endl;
 
 
         cout << "Sus valores son correctos y/n? ";
         cin >> valor_correcto;
         cout << endl;
-
-        
-
-
-
 
     }
 
@@ -236,5 +235,17 @@ void enviarPaquete() {
 }
 
 
+void vectores() {
+    Paquete *misPaquetes[3];
+    misPaquetes[0] = new Caja;
+    misPaquetes[1] = new Sobre;
+    misPaquetes[2] = new Cilindro;
 
+    Paquete *actual;
+    for (int i = 0; i < 3; i++) {
+        actual = misPaquetes[i];
+        cout << actual -> calcular_Precio() << endl;
+    }
+
+}
 

@@ -4,6 +4,12 @@
 
 using namespace std;
 
+Caja::Caja() {
+    	largo = 10;
+        ancho = 10;
+        altura = 10;
+}
+
 Caja::Caja(string paqueteria, string salida, string color,
         string de,
         string para, string direccion_destinatario,
@@ -38,18 +44,8 @@ void Caja::etiqueta() {
 }
 
 int Caja::calcular_Precio() {
+    
     int Precio_Caja = 100;
     
-    if (get_peso() <= 50 && get_peso() > 20) {
-        return 100 + Precio_Caja;
-    }
-
-    else if (get_peso() <= 20 && get_peso() > 10){
-        return 50 + Precio_Caja;
-    }
-
-    else if (get_peso() <= 10 && get_peso() > 0){
-        return 25 + Precio_Caja;
-    }
-    return 0;
+    return Precio_Caja;
 }

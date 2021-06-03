@@ -24,6 +24,7 @@ class Caja : public Paquete  {
 		
 	public:
 		//Constructor
+		Caja();
 		Caja(string paqueteria, string salida, string color,
         string de,
         string para, string direccion_destinatario,

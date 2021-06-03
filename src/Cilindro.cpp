@@ -4,6 +4,11 @@
 	
 using namespace std;
 
+Cilindro::Cilindro() {
+    	radio = 5;
+        altura = 10;
+}
+
 Cilindro::Cilindro(string paqueteria, string salida, string color,
         string de,
         string para, string direccion_destinatario,
@@ -32,18 +37,7 @@ void Cilindro::etiqueta() {
 
 int Cilindro::calcular_Precio() {
     int Precio_Cilindo = 50;
-    
-    if (get_peso() <= 50 && get_peso() > 20) {
-        return 100 + Precio_Cilindo;
-    }
 
-    else if (get_peso() <= 20 && get_peso() > 10){
-        return 50 + Precio_Cilindo;
-    }
-
-    else if (get_peso() <= 10 && get_peso() > 0){
-        return 25 + Precio_Cilindo;
-    }
-    return 0;
+    return Precio_Cilindo;
 
 }

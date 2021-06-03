@@ -4,6 +4,11 @@
 	
 using namespace std;
 
+Sobre::Sobre() {
+    	largo = 10;
+        ancho = 15;
+        estampas = 1;
+}
 
 Sobre::Sobre(string paqueteria, string salida, string color,
         string de,
@@ -39,19 +44,6 @@ void Sobre::etiqueta() {
 
 int Sobre::calcular_Precio() {
     int Precio_Sobre = 10;
-    
-    if (get_peso() <= 5 && get_peso() > 2) {
-        return 10 + Precio_Sobre;
-    }
-
-    else if (get_peso() <= 2 && get_peso() > 0) {
-        return 5 + Precio_Sobre;
-    }
-
-    else if (get_peso() > 5) {
-
-        return 1000;
-    }
-    return 0;
+    return Precio_Sobre;
 
 }

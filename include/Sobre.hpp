@@ -24,6 +24,7 @@ class Sobre : public Paquete {
 		
 	public:
 		//Constructor
+		Sobre();
 		Sobre(string paqueteria, string salida, string color,
         string de,
         string para, string direccion_destinatario,

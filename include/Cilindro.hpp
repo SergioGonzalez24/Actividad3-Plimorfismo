@@ -23,6 +23,7 @@ class Cilindro : public Paquete  {
 		
 	public:
 		//Constructor
+		Cilindro();
 		Cilindro(string paqueteria, string salida, string color,
         string de,
         string para, string direccion_destinatario,

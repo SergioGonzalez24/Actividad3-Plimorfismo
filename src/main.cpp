@@ -46,6 +46,11 @@ int main() {
         }
     }
     while (seleccion != 2); 
+
+    cout << endl;
+    cout << endl;
+    cout << "TEST VECTOR" << endl;
+    vectores();
     
     return 0;
 }
