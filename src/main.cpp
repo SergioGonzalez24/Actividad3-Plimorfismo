@@ -33,10 +33,8 @@ int main() {
             cout << endl;
 
             for (int i = 0; i <totPaq; i++) {
-                enviarPaquete();
-                 
+                enviarPaquete();   
             }
-
         }
 
         else if (seleccion == 2) {
