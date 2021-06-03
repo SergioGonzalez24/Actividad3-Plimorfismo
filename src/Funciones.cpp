@@ -24,10 +24,30 @@ void efecto_carga(int time, const string message, char symbol, int seleccion) {
         this_thread::sleep_for(chrono::milliseconds(time));       
     }
 
+    if (seleccion == 0) {
+        cout << "\n\n";
+        cout << "¡Procesando Envio!";
+        cout << "\n\n";
+    }
     
-    cout << "\n\n";
-    cout << "¡Envio Procesado!";
-    cout << "\n\n";
+    else if (seleccion == 1) {
+        cout << "\n\n";
+        cout << "¡Enviando caja!";
+        cout << "\n\n";
+    }
+
+    else if (seleccion == 2) {
+        cout << "\n\n";
+        cout << "¡Enviando cilindro!";
+        cout << "\n\n";
+    }
+
+    else if (seleccion == 3) {
+        cout << "\n\n";
+        cout << "¡Enviando sobre!";
+        cout << "\n\n";
+    }
+
 }
 
 
@@ -189,7 +209,7 @@ void enviarPaquete() {
             cout << endl;
             aEtiquetar(cilindro1);
             cout << endl;    
-            int paraEnviar = cilindro1.enviar_Paquete();   
+            paraEnviar = cilindro1.enviar_Paquete();   
         }
 
 
@@ -210,7 +230,8 @@ void enviarPaquete() {
 
     //Efectos de Cargando
 
-    efecto_carga(20, "Procesando", '*',paraEnviar); //Proceso
+    efecto_carga(20, "Procesando", '*',0); //Proceso
+    cout << endl;
     efecto_carga(10, "Enviando", '#',paraEnviar); //Enviando Paquete
 }
 
